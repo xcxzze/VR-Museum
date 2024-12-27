@@ -1,0 +1,10 @@
+﻿[*.cs]
+
+# IDE0090: Используйте "new(...)".
+dotnet_diagnostic.IDE0090.severity = none
+
+# IDE0017: Упростите инициализацию объекта
+dotnet_diagnostic.IDE0017.severity = none
+
+# IDE0044: Добавить модификатор только для чтения
+dotnet_diagnostic.IDE0044.severity = none

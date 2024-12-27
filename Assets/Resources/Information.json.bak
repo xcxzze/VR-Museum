@@ -1,0 +1,18 @@
+{
+	"vehicles": {
+		"Т90А": {
+			"parts": {
+				"Gun": "Gun",
+				"Turret": "Turret",
+				"Dynamic Protection System": "Dynamic Protection System",
+				"Communication System": "Communication System",
+				"Laser Sensor": "Laser Sensor",
+				"Lights": "Lights",
+				"Machine Gun": "Machine Gun",
+				"Rocket Launcher": "Rocket Launcher",
+				"Thermal Sensor": "Thermal Sensor",
+				"Tracks": "Tracks"
+			}
+		},
+	}
+}
