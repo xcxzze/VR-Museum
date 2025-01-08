@@ -5,10 +5,9 @@ using Valve.VR.Extras;
 public class LaserPointerOutliner : MonoBehaviour
 {
     [SerializeField] private GameObject panel;
-    [SerializeField] private OutlinableManager outlinableManager;
-
-    private SteamVR_LaserPointer laserPointer;
     private TMP_Text textPanel;
+    private SteamVR_LaserPointer laserPointer;
+    private OutlinableManager currentOutlinableManager;
     private Outlinable lastChosenDetail;
 
     private void Start()
@@ -33,13 +32,24 @@ public class LaserPointerOutliner : MonoBehaviour
         laserPointer.PointerClick -= ChooseDetailWithPointer;
     }
 
+    private void UpdateOutlinableManager(Transform target)
+    {
+        // Получаем OutlinableManager через родителя объекта (или другим способом)
+        var manager = target.GetComponentInParent<OutlinableManager>();
+        if (manager != null)
+        {
+            currentOutlinableManager = manager;
+        }
+    }
+
     public void SelectDetailWithPointer(object obj, PointerEventArgs e)
     {
         if (e.target.CompareTag("Outlinable"))
         {
-            var selectedDetail = outlinableManager.FindOutlinableByName(e.target.name);
+            UpdateOutlinableManager(e.target.transform);
 
-            outlinableManager.SwitchOutline(selectedDetail);
+            var selectedDetail = currentOutlinableManager.FindOutlinableByName(e.target.name);
+            currentOutlinableManager.SwitchOutline(selectedDetail);
         }
     }
 
@@ -47,9 +57,10 @@ public class LaserPointerOutliner : MonoBehaviour
     {
         if (e.target.CompareTag("Outlinable"))
         {
-            var selectedDetail = outlinableManager.FindOutlinableByName(e.target.name);
+            UpdateOutlinableManager(e.target.transform);
 
-            outlinableManager.SwitchOutline(selectedDetail);
+            var selectedDetail = currentOutlinableManager.FindOutlinableByName(e.target.name);
+            currentOutlinableManager.SwitchOutline(selectedDetail);
         }
     }
 
@@ -57,7 +68,9 @@ public class LaserPointerOutliner : MonoBehaviour
     {
         if (e.target.CompareTag("Outlinable"))
         {
-            var selectedDetail = outlinableManager.FindOutlinableByName(e.target.name);
+            UpdateOutlinableManager(e.target.transform);
+
+            var selectedDetail = currentOutlinableManager.FindOutlinableByName(e.target.name);
 
             if (selectedDetail != null)
             {
