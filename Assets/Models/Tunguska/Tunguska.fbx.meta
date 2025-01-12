@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0e810c49059905546b7ade60b9620d2d
+guid: ec748b6b719f5ec4dba6141c39ce8e1b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: body
-    second: {fileID: 2100000, guid: a5f5831c3595cd94599685f67c9f6b04, type: 2}
+    second: {fileID: 2100000, guid: 0fcd45731330d0c4db66a5357524e89b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: turret
-    second: {fileID: 2100000, guid: 8d5fbbf14731f7d4187093d08603f64d, type: 2}
+    second: {fileID: 2100000, guid: 9784168a90e215142bd786b8ab0bf772, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
